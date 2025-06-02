@@ -395,6 +395,9 @@ public:
     
     Q_INVOKABLE void forceArm           ();
 
+    //Send Custom Commands
+    Q_INVOKABLE void sendCustomCommand(const QString& command);
+
     /// Sends PARAM_MAP_RC message to vehicle
     Q_INVOKABLE void sendParamMapRC(const QString& paramName, double scale, double centerValue, int tuningID, double minValue, double maxValue);
 

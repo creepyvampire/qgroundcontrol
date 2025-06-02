@@ -224,6 +224,7 @@ Item {
         onClicked:          mapControl.zoomLevel -= 0.5
     }
 
+
     Component.onCompleted: {
         if (scale.visible) {
             calculateScale();

@@ -1617,6 +1617,10 @@ void Vehicle::forceArm(void)
                    2989);   // force arm
 }
 
+void Vehicle::sendCustomCommand(const QString& command){
+    qDebug()<<"Custom Function Called: "<<command<<"\n";
+}
+
 bool Vehicle::flightModeSetAvailable()
 {
     return _firmwarePlugin->isCapable(this, FirmwarePlugin::SetFlightModeCapability);
