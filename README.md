@@ -9,7 +9,7 @@ This repository is a fork of the [QGroundControl](https://github.com/mavlink/qgr
 
 ## License
 
-This project inherits the original QGroundControl license. Please refer to the [LICENSE](LICENSE) file for details.
+This project inherits the original QGroundControl license. Please refer to the LICENSE [1](./LICENSE-APACHE)/[2](./LICENSE-GPL) file for details.
 
 ## Credits
 
