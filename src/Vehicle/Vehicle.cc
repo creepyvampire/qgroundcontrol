@@ -1617,8 +1617,27 @@ void Vehicle::forceArm(void)
                    2989);   // force arm
 }
 
+//Custom Command for Text Field
 void Vehicle::sendCustomCommand(const QString& command){
-    qDebug()<<"Custom Function Called: "<<command<<"\n";
+    QStringList tokens= command.split(" ",Qt::SkipEmptyParts);
+    if(tokens.length()<1){
+        qWarning()<<"Empty or Invalid Command\n";
+        return;
+    }
+
+    QString cmdName=tokens[0].toLower();
+    float param1=tokens[1].toFloat();
+
+    MAV_CMD mavCmd=MAV_CMD_USER_1;
+    float armed=0.0f;
+    if (cmdName=="arm"){
+        mavCmd=MAV_CMD_COMPONENT_ARM_DISARM;
+        sendMavCommand(_defaultComponentId,mavCmd,true,param1);
+    } else{
+        qWarning()<<"Invalid Command\n";
+    }
+    qDebug()<<mavCmd<<"\n";
+
 }
 
 bool Vehicle::flightModeSetAvailable()
